@@ -1,0 +1,4 @@
+<h1>All Events</h1>
+<% @events.each do |event| %>
+  <div><a href="event_url(event.id)"><%= event %></a></div>
+<% end %>
