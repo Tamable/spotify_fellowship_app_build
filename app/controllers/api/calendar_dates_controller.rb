@@ -1,4 +1,4 @@
-class CalendarDatesController < ApplicationController
+class Api::CalendarDatesController < ApplicationController
   def index
     @dates = CalendarDate.all
   end
