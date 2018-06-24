@@ -8,12 +8,13 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
 
     if @event.save
-      redirect_to event_url(@event)
+      render :show
     else
-      fash.now[:errors] = @event.errors.full_messages
+      render json: @event.errors.full_messages, status: 422
     end
   end
 
@@ -25,20 +26,18 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
 
     if @event.update(event_params)
-      redirect_to event_url(@event)
+      render :show
     else
-      flash.now[:errors] = @event.errors.full_messages
-      render :edit
+      render json: @event.errors.full_messages, status: 422
     end
   end
 
-  def delete
+  def destroy
     event = Event.find(params[:id])
     event.destroy
-    redirect_to events_url
   end
 
   private

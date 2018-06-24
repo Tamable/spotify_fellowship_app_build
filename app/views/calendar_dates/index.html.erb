@@ -1,8 +1,0 @@
-<% days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>
-<% days.map do |day| %>
-  <span><%= day %></span>
-<% end %>
-<br></br>
-<% @dates.map do |date| %>
-<span><a href="new_calendar_date_event(date)"><%= date.date %></a></span>
-<% end %>
