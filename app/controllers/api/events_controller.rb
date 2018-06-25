@@ -36,12 +36,12 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    event = Event.find(params[:id])
+    event = current_user.events.find(params[:id])
     event.destroy
   end
 
   private
   def event_params
-    params.require(:event).permit(:title, :description)
+    params.require(:event).permit(:title, :description, :start, :end)
   end
 end
