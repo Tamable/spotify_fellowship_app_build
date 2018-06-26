@@ -9,7 +9,7 @@ This is the Rails API for a simple calendar event managing app. No user login; i
 **API:**
 
 * [POST] /api/events
- * Create a new event with the below params:
+  * Create a new event with the below params:
    * Title (string)
    * Description (string)
    * Start (datetime)
@@ -17,7 +17,7 @@ This is the Rails API for a simple calendar event managing app. No user login; i
 
 
 * [GET] /api/events
- * Return all events the user has on the calendar.
+  * Return all events the user has on the calendar.
 
 
 * [DELETE] /api/events/:id
