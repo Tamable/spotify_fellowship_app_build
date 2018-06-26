@@ -1,6 +1,6 @@
 ## Calendar App (Backend)
 
-This is the Rails API for a simple calendar event managing app.
+This is the Rails API for a simple calendar event managing app. No user login; it assumes the current user to be the one hard-coded user.
 
 **Technologies:**
 
