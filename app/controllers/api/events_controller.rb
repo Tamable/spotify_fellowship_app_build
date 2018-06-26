@@ -1,4 +1,7 @@
 class Api::EventsController < ApplicationController
+
+  before_action :ensure_logged_in, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @events = Event.all
   end
