@@ -10,10 +10,10 @@ This is the Rails API for a simple calendar event managing app. No user login; i
 
 * [POST] /api/events
   * Create a new event with the below params:
-   * Title (string)
-   * Description (string)
-   * Start (datetime)
-   * End (datetime)
+    * Title (string)
+    * Description (string)
+    * Start (datetime)
+    * End (datetime)
 
 
 * [GET] /api/events
