@@ -1,5 +1,26 @@
 {
   "name": "Calendar",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "description": "This is the Rails API for a simple calendar event managing app. No user login; it assumes the current user to be the one hard-coded user.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tamable/spotify_fellowship_two.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tamable/spotify_fellowship_two/issues"
+  },
+  "homepage": "https://github.com/Tamable/spotify_fellowship_two#readme"
 }
