@@ -1,13 +1,14 @@
 class User < ApplicationRecord
   validates :name, :password_digest, :session_token, presence: true
   validates :name, uniqueness: { message: "Sorry, there is already an account with that name."}
-  validates :password, length: { minimum: 8, allow_nil: true }
+  validates :password, length: { minimum: 8 }, allow_nil: true
 
   has_many :events
 
   after_initialize :ensure_session_token
 
   attr_reader :password
+  attr_accessor :password_digest, :session_token
 
   def self.find_by_credentials(name, password)
     user = User.find_by(name: name)
@@ -23,7 +24,7 @@ class User < ApplicationRecord
   end
 
   def is_password?(password)
-    BCrypt::Password.new(self.password_digest).is_password?(password)
+    BCrypt::Password.new(password_digest).is_password?(password)
   end
 
   def password=(password)
