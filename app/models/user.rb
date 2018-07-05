@@ -8,7 +8,6 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   attr_reader :password
-  attr_accessor :password_digest, :session_token
 
   def self.find_by_credentials(name, password)
     user = User.find_by(name: name)
